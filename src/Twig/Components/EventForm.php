@@ -33,7 +33,7 @@ final class EventForm extends AbstractController
     #[LiveAction]
     public function save(MessageBusInterface $bus): \Symfony\Component\HttpFoundation\RedirectResponse
     {
-        // dd($this->fomValues);
+        dd($this->formValues);
         // Submit the form! If validation fails, an exception is thrown
         // and the component is automatically re-rendered with the errors
         $this->submitForm();
