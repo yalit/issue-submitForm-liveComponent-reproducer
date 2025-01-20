@@ -1,0 +1,14 @@
+<div{{ attributes }}>
+    {{ form_start(form, {
+        attr: {
+            'data-action': 'live#action:prevent',
+            'data-live-action-param': 'save'
+        }
+    }) }}
+    {{ form_row(form.name) }}
+    {{ form_row(form.participants) }}
+    {{ form_errors(form.participants) }}
+    <button>Save</button>
+    {{ form_end(form) }}
+</div>
+
