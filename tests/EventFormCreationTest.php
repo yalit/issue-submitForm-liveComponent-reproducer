@@ -14,6 +14,8 @@ class EventFormCreationTest extends KernelTestCase
     {
         $component = $this->createLiveComponent(EventForm::class);
 
+        $component->call('addCollectionItem', ['name' => 'participants']);
+        $component->call('addCollectionItem', ['name' => 'participants']);
         $component->submitForm(['event_creation' => [
             'name' => "Event name",
             'participants' => [
@@ -28,7 +30,8 @@ class EventFormCreationTest extends KernelTestCase
             ]
         ]], 'save');
 
-        // Non-reproduced assertions linked to the storage in DB
+        // just to check that the submitForm is not failing
+        self::assertTrue(true);
     }
 }
 

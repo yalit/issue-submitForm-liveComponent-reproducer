@@ -31,12 +31,8 @@ final class EventForm extends AbstractController
     }
 
     #[LiveAction]
-    public function save(MessageBusInterface $bus): \Symfony\Component\HttpFoundation\RedirectResponse
+    public function save(MessageBusInterface $bus): void
     {
-        // debug to see the content that is being fed to the submitForm below
-        dd($this->formValues);
-
-        // it no dd above, this fails during the testing in the EventFormCreationTest.php due to the missing data at the participants level
         $this->submitForm();
     }
 }
